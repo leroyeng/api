@@ -34,23 +34,7 @@ module.exports = {
     }
     
 
-    /*Or:
-  If you want to use the Promise based approach*/
-    /*
-  const product = new Product({
-    name: req.body.name,
-    price: req.body.price
-  });
-  product
-    .save()
-    .then(result => {
-      console.log(result);
-      res.send(result);
-    })
-    .catch(err => {
-      console.log(err.message);
-    }); 
-    */
+    
   },
 
   findHouseById: async (req, res, next) => {
