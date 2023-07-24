@@ -1,29 +1,46 @@
-###Get a list of all products
-GET http://localhost:3000/products
+###Get a list of all houses
+GET http://localhost:3000/houses
 
 ### Create a product
-POST http://localhost:3000/products
+POST http://localhost:3000/houses
+Content-Type: application/json
+
+POST http://localhost:3000/houses
 Content-Type: application/json
 
 {
-  "name": "iMac Pro",
-  "price": 4999
+  "id": 1,
+  "name": "Your House Name",
+  "city": "Your House Location",   // Assuming location is the city
+  "state": "Your House State",     // Assuming state is the state
+  "price": "$200/night",           // Assuming price is in this format
+  "value": 200,                    // Assuming value is the numerical price
+  "description": "Description of your house",
+  "photo": "/assets/your-house-photo.webp",  // Replace with the actual photo URL
+  "availableUnits": 3,
+  "wifi": true,
+  "laundry": true,
+  "kitchen": true,
+  "tv": true,
+  "patio": false,                  // Assuming patioBalcony is now just patio
+  "parking": true,
+  "pets": false                    // Assuming petsAllowed is now just pets
 }
 
-### GET a product by id
-GET http://localhost:3000/products/5df118b3c86e5826958b661a
 
+### GET a product by id
+GET http://localhost:3000/houses/(actualidofhouse)
 ### Update a product by id
-PATCH  http://localhost:3000/products/5df118b3c86e5826958b661a
+PATCH  http://localhost:3000/houses/(actualidofhouse)
 Content-Type: application/json
 
 {
-  "price": 5999
+  "parking": false
 }
 
 
 ### Delete a product by id
-DELETE  http://localhost:3000/products/5df118b3c86e5826958b661a
+DELETE  http://localhost:3000/houses/(actualidofhouse)
 
 ### 404 route Not Found
 GET http://localhost:3000/abc_xyz

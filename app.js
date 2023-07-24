@@ -1,17 +1,18 @@
 const express = require('express');
 const createError = require('http-errors');
 const dotenv = require('dotenv').config();
-
+const cors=require ('cors')
 const app = express();
-
+app.use(cors('http://localhost:4200'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 
 // Initialize DB
 require('./initDB')();
 
-const ProductRoute = require('./Routes/Product.route');
-app.use('/products', ProductRoute);
+const HousesRoute = require('./Routes/Houses.route');
+app.use('/houses',HousesRoute);
 
 //404 handler and pass to error handler
 app.use((req, res, next) => {
